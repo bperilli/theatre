@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Theater</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
     * {
       box-sizing: border-box;
@@ -14,7 +21,7 @@
 
     body {
       min-height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Roboto", Arial, Helvetica, sans-serif;
       background:
         radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 35%),
         linear-gradient(135deg, #050505, #111, #000);
@@ -41,14 +48,15 @@
 
     h1 {
       font-size: clamp(2rem, 5vw, 4rem);
-      font-weight: 700;
-      letter-spacing: -0.04em;
+      font-weight: 900;
+      letter-spacing: -0.06em;
       margin-bottom: 12px;
     }
 
     p {
       color: rgba(255, 255, 255, 0.68);
       font-size: 1.1rem;
+      font-weight: 400;
       margin-bottom: 40px;
     }
 
@@ -99,6 +107,7 @@
     .app-label {
       font-size: 0.95rem;
       font-weight: 700;
+      letter-spacing: 0.01em;
       color: rgba(255, 255, 255, 0.92);
     }
 
@@ -140,6 +149,10 @@
         width: 88px;
         height: 88px;
       }
+
+      .app-label {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -150,8 +163,7 @@
 
   <main class="page">
     <h1>Theater Mode</h1>
-    <p>Scegli un’app da aprire.</p>
-    <p>Poi clicca su "vai al sito" per continuare.</p>
+    <p>Scegli un’app da aprire. Poi clicca su "vai al sito" per continuare.</p>
 
     <section class="app-grid">
 
@@ -168,20 +180,6 @@
           alt="MLB.TV"
         />
         <span class="app-label">MLB.TV</span>
-      </a>
-      <a
-        class="app-button"
-        href="https://www.youtube.com/redirect?q=https://play.hbomax.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Apri HBO Max"
-      >
-        <img
-          class="app-icon"
-          src="assets/hbo.webp"
-          alt="HBO Max"
-        />
-        <span class="app-label">HBO Max</span>
       </a>
 
       <a
@@ -208,10 +206,25 @@
       >
         <img
           class="app-icon"
-          src="assets/ATV.webp"
+          src="assets/apple-tv.webp"
           alt="Apple TV"
         />
         <span class="app-label">Apple TV</span>
+      </a>
+
+      <a
+        class="app-button"
+        href="https://www.youtube.com/redirect?q=https://play.hbomax.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Apri HBO Max"
+      >
+        <img
+          class="app-icon"
+          src="assets/hbo.webp"
+          alt="HBO Max"
+        />
+        <span class="app-label">HBO Max</span>
       </a>
 
     </section>
