@@ -22,10 +22,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
-    .theater {
+    .page {
       width: 90%;
       max-width: 900px;
       text-align: center;
@@ -39,42 +39,6 @@
       border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .screen {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 24px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
-        #090909;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 36px;
-      box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.8),
-        0 0 40px rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .play-icon {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-
-    .play-icon::before {
-      content: "";
-      margin-left: 8px;
-      border-left: 30px solid white;
-      border-top: 20px solid transparent;
-      border-bottom: 20px solid transparent;
-    }
-
     h1 {
       font-size: clamp(2rem, 5vw, 4rem);
       font-weight: 700;
@@ -85,35 +49,57 @@
     p {
       color: rgba(255, 255, 255, 0.68);
       font-size: 1.1rem;
-      margin-bottom: 32px;
+      margin-bottom: 40px;
     }
 
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px 34px;
-      border-radius: 999px;
-      background: white;
-      color: black;
-      font-size: 1rem;
-      font-weight: 700;
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 28px;
+      justify-items: center;
+      align-items: start;
+    }
+
+    .app-button {
+      width: 130px;
       text-decoration: none;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+    }
+
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      object-fit: cover;
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 12px 35px rgba(255, 255, 255, 0.18);
       transition:
         transform 0.25s ease,
         box-shadow 0.25s ease,
         background 0.25s ease;
-      box-shadow: 0 12px 35px rgba(255, 255, 255, 0.18);
     }
 
-    .button:hover {
-      transform: translateY(-3px) scale(1.03);
-      background: #f2f2f2;
+    .app-button:hover .app-icon {
+      transform: translateY(-3px) scale(1.06);
       box-shadow: 0 18px 45px rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.18);
     }
 
-    .button:active {
-      transform: scale(0.98);
+    .app-button:active .app-icon {
+      transform: scale(0.96);
+    }
+
+    .app-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
     }
 
     .glow {
@@ -142,22 +128,28 @@
   <div class="glow one"></div>
   <div class="glow two"></div>
 
-  <main class="theater">
-    <section class="screen">
-      <div class="play-icon"></div>
-    </section>
-
+  <main class="page">
     <h1>Theater Mode</h1>
-    <p>Apri l’esperienza in modalità cinema.</p>
+    <p>Scegli un’app da aprire.</p>
 
-    <a
-      class="button"
-      href="https://www.youtube.com/redirect?q=http://mlb.tv"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Apri MLB.TV
-    </a>
+    <section class="app-grid">
+
+      <a
+        class="app-button"
+        href="https://www.youtube.com/redirect?q=http://mlb.tv"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Apri MLB.TV"
+      >
+        <img
+          class="app-icon"
+          src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8f/d2/1b/8fd21bf2-27a6-87eb-86bb-70e233a541c7/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+          alt="MLB"
+        />
+        <span class="app-label">MLB.TV</span>
+      </a>
+
+    </section>
   </main>
 </body>
 </html>
